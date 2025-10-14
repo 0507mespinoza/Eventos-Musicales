@@ -11,6 +11,7 @@ class Registro extends StatefulWidget {
 
 class _RegistroState extends State<Registro> {
   String trato = "Sr.";
+  
   void _PantallaPrincipal() {
     Navigator.push(
       context,

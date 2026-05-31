@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:michaelespinozac1/config/resources/utils/Button_styles.dart';
-import 'package:michaelespinozac1/config/resources/utils/Validators.dart';
 import 'package:michaelespinozac1/screens/PaginaSecundaria.dart';
-import 'package:michaelespinozac1/screens/Registro.dart';
+import 'package:michaelespinozac1/screens/pantalla_registro.dart';
 
 void main() {
   runApp(const PantallaPrincipal());
@@ -28,14 +27,11 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
   void _registro() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const Registro()),
+      MaterialPageRoute(builder: (context) => const PantallaRegistro()),
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    String _contrasenia;
-    String _nombre;
+  @override  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 109, 182, 241),
@@ -47,6 +43,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
           padding: const EdgeInsets.all(100.0),
           child: Column(
             children: [
+              SizedBox(height: 10),
               Image.asset("assets/images/logo.jpg"),
               SizedBox(height: 10),
               Form(
@@ -56,19 +53,13 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: "Nombre",
-                        border: OutlineInputBorder(),
-                      ),
-                      onChanged: (value) => _nombre = value,
-                      validator: (value) => Validators.validateEmpty(value),
+                        border: OutlineInputBorder(),                      ),
                     ),
                     SizedBox(height: 20),
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: "Contraseña",
-                        border: OutlineInputBorder(),
-                      ),
-                      onChanged: (value) => _contrasenia = value,
-                      validator: (value) => Validators.validateEmpty(value),
+                        border: OutlineInputBorder(),                      ),
                     ),
                   ],
                 ),

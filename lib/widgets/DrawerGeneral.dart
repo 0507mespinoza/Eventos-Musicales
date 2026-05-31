@@ -15,7 +15,7 @@ class _DrawerGeneralState extends State<DrawerGeneral> {
     return Drawer(
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: 65,
             child: DrawerHeader(
               decoration: BoxDecoration(
